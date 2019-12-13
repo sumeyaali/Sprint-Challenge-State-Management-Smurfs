@@ -23,10 +23,31 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+      It eliminates the need to pass props between components, by storing your data in a context API, you can retrieve any data for any component on any level. 
+
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+          Actions: When actions- which are made up of two properties: actions and payload- are dispatched, its sent to the reducer function as an arguement which then updates the state based on the action and payloads. 
+
+          reducers: The role of the reducer as a pure function is to take the previous state and an action and return a new state. 
+
+          store: The store is responsibile for holding our application state, and allows state to be updated. It where data is stored and retrieved from components at any level. 
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+    Application state is global which is why its held in store, this way any component can access it. Component state is held in one components and passed to children components via props. 
+
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+    its a function that defers work for later, it intercepts the normal redux flow when an action is creator is called by acting on returned data. If it verifies that the return data is an action it continues the flow by forwarding the data through the reducer. 
+
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+    Context API was pretty cool to learn, especially since it can be overwhelming trying to pass props through components that are sometimes in different levels. 
+
 
 ## Project Set Up
 
