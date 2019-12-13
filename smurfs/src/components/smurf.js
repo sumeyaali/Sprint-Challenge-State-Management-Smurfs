@@ -5,9 +5,9 @@ const Smurf = (props) => {
     return (
         <div>
             <p>{props.id}</p>
-            <p>{props.name}</p>
-            <p>{props.age}</p>
-            <p>{props.height}</p>
+            <p>My name is {props.name}</p>
+            <p>I am {props.age} years old!</p>
+            <p>I am {props.height} tall!</p>
         </div>
     )
 }

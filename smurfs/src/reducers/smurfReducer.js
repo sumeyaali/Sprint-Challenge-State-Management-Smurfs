@@ -6,10 +6,15 @@ import {
 
 
 export const initialState = {
-    greeting: 'Hi! Im a smurf!',
     isFetching: false,
     error: '',
-    smurf:null
+    smurfs:[
+        {
+        name: 'Brainey',
+        age: 200,
+        height: '5cm',
+        id: 0
+       }]
 };
 
 export const reducer = (state=initialState, action) => {
@@ -23,6 +28,7 @@ export const reducer = (state=initialState, action) => {
             case FETCH_A_SMURF_SUCCESS :
                 return {
                     ...state,
+                    smurfs: action.payload,
                     isFetching: false,
                     error: ''
                 };

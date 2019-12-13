@@ -16,26 +16,22 @@ export const fetchNewSmurf = () => dispatch => {
   axios
     .get('http://localhost:3333/smurfs')
     .then(res => {
-      dispatch({ type: FETCH_A_SMURF_SUCCESS, payload: res.data.value });
+      dispatch({ type: FETCH_A_SMURF_SUCCESS, payload: res.data});
+      console.log(res.data)
     })
     .catch(err => {
-      dispatch({ type: FETCH_A_SMURF_FAILURE, payload: err.response });
+      dispatch({ type: FETCH_A_SMURF_FAILURE, payload: err });
     });
 };
 
-export const addNewSmurf = () => dispatch => {
+export const addNewSmurf = (values) => dispatch => {
     dispatch({ type: ADD_A_SMURF_START });
     axios
-      .post('http://localhost:3333/smurfs', {
-        name: " ",
-        age: " ",
-        height: " ",
-        id: Date.now()
-    })
+      .post('http://localhost:3333/smurfs', values)
       .then(res => {
-        dispatch({ type: ADD_A_SMURF_SUCCESS, payload: res.data.value });
+        dispatch({ type: ADD_A_SMURF_SUCCESS, payload: values });
       })
       .catch(err => {
-        dispatch({ type: ADD_A_SMURF_FAILURE, payload: err.response });
+        dispatch({ type: ADD_A_SMURF_FAILURE, payload: err });
       });
   };
